@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <style>
+        body {
+     background-image: url('bg.jpg');
+    background-size: cover;
+    background-position: center;
+     background-repeat: no-repeat;
+     font-family: "Poppins", sans-serif;
+     padding: 0;
+     margin: 0;
+}
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ride Form</title>
+    <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+            rel="stylesheet"
+    />
+    <link rel="stylesheet" th:href="@{/css/login.css}" />
+    <script th:src="@{/js/login.js}" defer></script>
+</head>
+<body>
+<div class="container">
+    <form th:action="@{/ride/submit}" th:object="${ride}" method="post">
+        <label for="source">Source:</label>
+        <input type="text" id="source" th:field="*{source}" placeholder="Enter source" required />
+
+        <label for="destination">Destination:</label>
+        <input type="text" id="destination" th:field="*{destination}" placeholder="Enter destination" required/>
+
+        <label for="price">Fare:</label>
+        <input type="date" id="price" th:field="*{price}" placeholder="Enter fare" required/>
+
+        <label for="tip">Tip:</label>
+        <input type="time" id="tip" th:field="*{tip}" placeholder="Enter tip" />
+
+        <button type="submit">Add Ride</button>
+    </form>
+</div>
+</body>
+</html>
