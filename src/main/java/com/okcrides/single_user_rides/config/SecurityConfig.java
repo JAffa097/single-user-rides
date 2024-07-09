@@ -13,7 +13,7 @@ public class SecurityConfig {
     public InMemoryUserDetailsManager userManager(){
         UserDetails user= User.builder()
                 .username("user")
-                .password("{noop}password")
+                .password("{noop}user")
                 .roles("Employee")
                 .build();
         return new InMemoryUserDetailsManager(user);
