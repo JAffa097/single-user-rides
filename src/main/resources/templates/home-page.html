@@ -5,10 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EDMOND RIDES</title>
 <link rel="stylesheet" th:href="@{/css/home-page.css}">
+    <script type="text/javascript">
+        function redirectToController() {
+            window.location.href = "/add-ride";
+        }
+    </script>
 </head>
 <body>
 <div class="button-container">
-    <button class="button">Add Ride</button>
+    <button class="button" onclick="redirectToController()">Add Ride</button>
     <button>past dues</button>
 </div>
 <div class="logout-container">
