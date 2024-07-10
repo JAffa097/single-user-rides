@@ -1,44 +1,38 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
-    <style>
-        body {
-     background-image: url('bg.jpg');
-    background-size: cover;
-    background-position: center;
-     background-repeat: no-repeat;
-     font-family: "Poppins", sans-serif;
-     padding: 0;
-     margin: 0;
-}
-    </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ride Form</title>
-    <link
-            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
-            rel="stylesheet"
-    />
-    <link rel="stylesheet" th:href="@{/css/login.css}" />
-    <script th:src="@{/js/login.js}" defer></script>
+    <title>Submit Your Ride</title>
+    <link th:href="@{/css/add-ride.css}" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+    <!-- <script type="text/javascript" th:src="@{/js/add-ride.js}" defer></script>-->
 </head>
 <body>
-<div class="container">
-    <form th:action="@{/ride/submit}" th:object="${ride}" method="post">
-        <label for="source">Source:</label>
-        <input type="text" id="source" th:field="*{source}" placeholder="Enter source" required />
-
-        <label for="destination">Destination:</label>
-        <input type="text" id="destination" th:field="*{destination}" placeholder="Enter destination" required/>
-
-        <label for="price">Fare:</label>
-        <input type="date" id="price" th:field="*{price}" placeholder="Enter fare" required/>
-
-        <label for="tip">Tip:</label>
-        <input type="time" id="tip" th:field="*{tip}" placeholder="Enter tip" />
-
-        <button type="submit">Add Ride</button>
-    </form>
-</div>
+<!-- Home -->
+<section class="home">
+    <div class="form_container">
+        <i class="uil uil-times form_close"></i>
+        <!-- Login Form -->
+        <div class="form login_form">
+            <form th:action="@{/ride/submit}" th:object="${ride}" method="POST">
+                <h2>Submit Your Ride</h2>
+                <div class="input_box">
+                    <input type="text" placeholder="Enter Source" th:field="*{source}" name="source" required />
+                    <i class="uil uil-location-point source-icon"></i>
+                </div>
+                <div class="input_box">
+                    <input type="text" placeholder="Enter Destination" th:field="*{destination}" name="destination" required />
+                    <i class="uil uil-map-marker destination-icon"></i>
+                </div>
+                <div class="input_box">
+                    <input type="text" placeholder="Enter Fare" name="fare" th:field="*{fare}" required />
+                    <i class="uil uil-dollar-sign fare-icon"></i>
+                </div>
+                <button class="button">Login Now</button>
+            </form>
+        </div>
+    </div>
+</section>
 </body>
 </html>

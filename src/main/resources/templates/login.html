@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
-    <title>Geeksforgeeks</title>
+    <title>EDMOND RIDES</title>
     <link th:href="@{/css/login.css}" rel="stylesheet" />
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
     <script type="text/javascript" th:src="@{/js/login.js}" defer></script>
@@ -23,7 +23,7 @@
 </header>
 
 <!-- Home -->
-<section class="home">
+<section class="home" th:classappend="${shouldShow} ? 'home show' : 'home'">
     <div class="form_container">
         <i class="uil uil-times form_close"></i>
         <!-- Login From -->
@@ -51,7 +51,8 @@
 
                 <button class="button">Login Now</button>
 
-                <div class="login_signup">Don't have an account? <a href="#" id="signup">Signup</a></div>
+                <div th:if="${errorMsg != null}" th:text="${errorMsg}" class="error-msg"></div>
+                <div th:if="${logoutMsg != null}" th:text="${logoutMsg}" class="logout-msg"></div>
             </form>
         </div>
 

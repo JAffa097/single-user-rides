@@ -3,6 +3,7 @@ package com.okcrides.single_user_rides.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configurers.LogoutConfigurer;
 import org.springframework.security.web.SecurityFilterChain;
 
 
@@ -22,7 +23,7 @@ public class LoginPageSecurityConfig {
                               form
                                       .loginPage("/loginpage")
                                       .loginProcessingUrl("/authenticateUser")
-                                      .permitAll());
+                                      .permitAll()).logout(LogoutConfigurer::permitAll);
 
     return http.build();
     }
