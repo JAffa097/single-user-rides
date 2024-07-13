@@ -21,7 +21,7 @@ public class Ride {
 
 
     private String user;
-    private int fare;
+    private String fare;
     private int tip;
 
     // Getters and setters
@@ -73,11 +73,11 @@ public class Ride {
         this.user = user;
     }
 
-    public int getFare() {
+    public String getFare() {
         return fare;
     }
 
-    public void setFare(int fare) {
+    public void setFare(String fare) {
         this.fare = fare;
     }
 

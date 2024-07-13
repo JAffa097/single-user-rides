@@ -1,85 +1,54 @@
 body {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-image: url('/images/bg.jpg');
-            background-size: cover;
-            background-position: center;
-        }
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('/images/temp.jpg');
+    background-size: cover;
+    background-position: center;
+    font-family: 'Poppins', sans-serif;
+}
 
+.button-container {
+    text-align: center;
+}
 
-        .button-container {
-            text-align: center;
-        }
+.button-container .button,
+.logout-container .button {
+    margin: 10px;
+    padding: 15px 30px;
+    font-size: 18px;
+    background-color: #7d2ae8; /* Same as Login Now button */
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
 
-        .button-container button {
-            margin: 10px;
-            padding: 15px 30px;
-            font-size: 18px;
-            background-color: #c3d3d9;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s ease;
-        }
+.button-container .button:hover,
+.logout-container .button:hover {
+    transform: scale(1.1);
+    background-color: #5c23b2; /* Slightly darker shade for hover */
+}
 
-        .button-container button:hover {
-            transform: scale(1.1);
-        }
- body {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-image: url('/images/bg.jpg');
-            background-size: cover;
-            background-position: center;
-        }
+.logout-container {
+    position: absolute;
+    top: 5%;
+    right: 20%;
+}
 
-        .button-container {
-            text-align: center;
-        }
+@media (max-width: 767px) {
+    .logout-container {
+        right: 5%;
+    }
+}
 
-        .button-container button {
-            margin: 10px;
-            padding: 15px 30px;
-            font-size: 18px;
-            background-color: #c3d3d9;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s ease;
-        }
-
-        .button-container button:hover {
-            transform: scale(1.1);
-        }
-
-        .logout-container {
-            position: absolute;
-            top: 5%;
-            right: 20%;
-        }
-
-        .logout-container input[type="submit"] {
-            padding: 15px 30px;
-            font-size: 18px;
-            background-color: #c3d3d9;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s ease;
-        }
-
-        .logout-container input[type="submit"]:hover {
-            transform: scale(1.1);
-        }
-
+@media (min-width: 768px) {
+    .button-container {
+        max-width: 600px;
+    }
+}

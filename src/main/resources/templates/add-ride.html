@@ -6,27 +6,24 @@
     <title>Submit Your Ride</title>
     <link th:href="@{/css/add-ride.css}" rel="stylesheet" />
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
-    <!-- <script type="text/javascript" th:src="@{/js/add-ride.js}" defer></script>-->
 </head>
 <body>
-<!-- Home -->
 <section class="home">
     <div class="form_container">
         <i class="uil uil-times form_close"></i>
-        <!-- Login Form -->
         <div class="form login_form">
             <form th:action="@{/ride/submit}" th:object="${ride}" method="POST">
                 <h2>Submit Your Ride</h2>
                 <div class="input_box">
-                    <input type="text" placeholder="Enter Source" th:field="*{source}" name="source" required />
+                    <input type="text" placeholder="Enter Source" th:field="*{source}" required />
                     <i class="uil uil-location-point source-icon"></i>
                 </div>
                 <div class="input_box">
-                    <input type="text" placeholder="Enter Destination" th:field="*{destination}" name="destination" required />
+                    <input type="text" placeholder="Enter Destination" th:field="*{destination}" required />
                     <i class="uil uil-map-marker destination-icon"></i>
                 </div>
                 <div class="input_box">
-                    <input type="text" placeholder="Enter Fare" name="fare" th:field="*{fare}" required />
+                    <input type="text" placeholder="Enter Fare" th:field="*{fare}" value="" required />
                     <i class="uil uil-dollar-sign fare-icon"></i>
                 </div>
                 <button class="button">Submit</button>
@@ -34,5 +31,6 @@
         </div>
     </div>
 </section>
+<script src="/js/add-ride.js" defer></script>
 </body>
 </html>
