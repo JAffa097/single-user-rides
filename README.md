@@ -22,3 +22,12 @@ CREATE TABLE local.Rides (
 
 
 ALTER TABLE local.Rides AUTO_INCREMENT = 10000;
+
+
+create table local.users(username varchar(50) primary key, password varchar(50) not null, enabled tinyint not null ); 
+CREATE TABLE local.authorities (
+  `username` varchar(50) NOT NULL,
+  `authority` varchar(50) NOT NULL,
+  UNIQUE KEY `authorities_idx_1` (`username`,`authority`),
+  CONSTRAINT `authorities_ibfk_1` FOREIGN KEY (`username`) REFERENCES `users` (`username`)
+)
